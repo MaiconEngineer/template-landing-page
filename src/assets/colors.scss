@@ -1,0 +1,79 @@
+$vt-c-black: #0F0F0F;
+$vt-c-white: #ffffff;
+$vt-c-black-seconday: #060606;
+$vt-b-lgray: #B7B7B7;
+$vt-b-gray: #313131;
+
+$vt-b-gray-100: #E8E8E8;
+$vt-b-gray-200: #868686;
+$vt-c-black-300: #171717;
+
+$vt-c-red: #F41829;
+$vt-c-red-100: #D40000;
+$vt-c-red-200: #B2001E;
+$vt-c-red-300: #F50008;
+
+$vt-c-green: #6AEC00;
+$vt-c-green-100: #347300;
+$vt-c-green-500: #5E7961;
+
+.f-w-primary{
+  color: white;
+}
+
+//background color
+
+.bg-gray-100 {
+  background: $vt-c-black-seconday;
+}
+
+.bg-lgray{
+  background-color: $vt-b-gray;
+}
+
+.bg-black-300{
+  background-color: $vt-c-black-300;
+}
+
+.f-w-gradient-red-black{
+  background: -webkit-linear-gradient($vt-c-red-300,$vt-c-red-200);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.f-w-gradient-gray-black{
+  background: -webkit-linear-gradient($vt-b-gray-100,$vt-b-gray-200);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// gradient background
+
+.g-tb-red-to-redblack{
+  background: linear-gradient(to bottom,$vt-c-red-300,$vt-c-red-200);
+}
+
+.g-lb-green-to-greenblack{
+  background: linear-gradient(160deg,$vt-c-green,$vt-c-green-500);
+}
+
+.text-lg-lb-red-to-red100{
+  background: -webkit-linear-gradient($vt-c-red,$vt-c-red-100);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-white-to-white100{
+  background: -webkit-linear-gradient($vt-c-white,$vt-b-gray-100);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+// border
+
+.bc-secondary{
+  border-color: $vt-c-black;
+}
+
+.bc-lgray{
+  border-color: $vt-b-lgray;
+}
