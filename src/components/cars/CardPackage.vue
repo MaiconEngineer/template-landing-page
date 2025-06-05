@@ -1,7 +1,8 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import ButtonSecondary from '../buttons/ButtonSecondary.vue';
-import ChipCheck from '@/components/chips/ChipCheck.vue';
+import ChipCheck from '../chips/ChipCheck.vue';
+
 
 export default defineComponent({
   name: 'CardPackage',

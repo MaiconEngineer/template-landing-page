@@ -1,6 +1,6 @@
 <script lang="ts" >
 import { defineComponent } from 'vue';
-import IconArrowTop from '../icons/iconArrowTop.vue';
+import IconArrowTop from '../icons/IconArrowTop.vue';
 
 export default defineComponent({
   props: {

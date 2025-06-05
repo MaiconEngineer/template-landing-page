@@ -1,6 +1,19 @@
 
-<script setup>
+<script lang="ts">
+import { defineComponent } from 'vue';
 import IconCheck from '../icons/IconCheck.vue';
+
+export default defineComponent({
+  components: {
+    IconCheck
+  },
+  data(){
+
+  },
+  mounted(){
+
+  }
+})
 
 </script>
 

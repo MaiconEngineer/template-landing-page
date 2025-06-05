@@ -1,35 +1,25 @@
 <script lang="ts" >
 import { defineComponent } from 'vue';
-import avatar1 from '@/assets/png/avatar/avatar1.jpg'
-import avatar2 from '@/assets/png/avatar/avatar2.png'
-import avatar3 from '@/assets/png/avatar/avatar3.png'
-import avatar4 from '@/assets/png/avatar/avatar4.png'
-import avatar5 from '@/assets/png/avatar/nykolas.png'
-import avatar6 from '@/assets/png/avatar/avatar6.png'
-
-const avatars = {
-  'avatar1': avatar1,
-  'avatar2': avatar2,
-  'avatar3': avatar3,
-  'avatar4': avatar4,
-  'avatar5': avatar5,
-  'avatar6': avatar6
-}
+import { avatars } from '../Entitys/types/Avatars'
+import type { AvatarKey } from '../Entitys/types/Avatars'
 
 export default defineComponent({
    props: {
     className: String,
     icon: {
-      type: String,
+      type: String as () => AvatarKey,
       required: true,
       default: undefined
     }
    },
    data(){
     let img: string = ""
-    console.log('this',this.icon[0],this.icon?.valueOf(),this.icon?.valueOf() != undefined)
     if(this.icon != undefined){
-      img = avatars[this.icon]
+      console.log('this',this.icon[0],this.icon?.valueOf(),this.icon?.valueOf() != undefined)
+    }
+
+    if(this.icon != undefined && Object.keys(avatars).includes(this.icon)){
+      img = avatars[this.icon as AvatarKey]
     }
 
     return {

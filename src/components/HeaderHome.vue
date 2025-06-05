@@ -1,15 +1,16 @@
-<script  lang="ts">
+<script lang="ts">
 import { defineComponent, ref } from 'vue'
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import type { AvatarKey } from '../Entitys/types/Avatars'
 import CardAvatar from './CardAvatar.vue'
 import bannerimpact from '@/assets/png/backgroundmask.png'
-import Imagelogoblackskull from '@/assets/png/blackskull.png'
 import ImageSelo from '@/assets/png/selo-package1.png'
 import ButtonPrimary from './buttons/ButtonPrimary.vue'
 import CardPackage from './cars/CardPackage.vue'
 import CardSupportContact from './cars/CardSupportContact.vue'
 
-export default {
+export default defineComponent({
   components: {
     CardAvatar,
     ButtonPrimary,
@@ -30,14 +31,14 @@ export default {
      if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
       const elementScroll = this.$refs.scroll as HTMLElement
       elementScroll.style.maxWidth = window.screen.width + 'px'
-      elementScroll.setAttribute("data-animated",true)
+      elementScroll.setAttribute("data-animated",'true')
 
       const scrollInner = elementScroll.querySelector('.scroll-inner')
-      const scrollContent = Array.from(scrollInner?.children);
+      const scrollContent = Array.from(scrollInner?.children || []);
 
       scrollContent.forEach((content) => {
         const item = content.cloneNode(true) as HTMLElement;
-        item.setAttribute('aria-hidden',true);
+        item.setAttribute('aria-hidden','true');
         scrollInner?.appendChild(item);
       })
 
@@ -51,7 +52,7 @@ export default {
   methods: {
 
   }
-}
+})
 </script>
 
 <template>
@@ -62,9 +63,16 @@ export default {
     <h1 class="title f-w-primary" >
       Construímos <span class="f-w-gradient-red-black" >Físicos</span> <br/> que impactam
     </h1>
-    <p class="subtitle ft-medium f-w-primary">Aqui na Sparta, você não fica parado! Tratamos cada <br/> aluno como único, com o propósito de elevar seu <br/> físico e saúde ao próximo nível.</p>
+    <p class="subtitle ft-medium f-w-primary">
+        Aqui na Sparta, você não fica parado! Tratamos cada <br/>
+        aluno como único, com o propósito de elevar seu <br/>
+        físico e saúde ao próximo nível.</p>
     <div class="users">
-      <CardAvatar v-for="(item,index) in Array(5).fill(1)" :key="index" :style="{ zIndex: index * -1 }" :icon="[index == 4 ? '':`avatar${index + 1}`]"  className="custom-card" />
+      <CardAvatar v-for="(item,index) in Array(5).fill(1)"
+                  :key="index"
+                  :style="{ zIndex: index * -1 }"
+                  :icon="index === 4 ? undefined : (`avatar${index + 1}` as AvatarKey)"
+                  className="custom-card" />
     </div>
 
     <ButtonPrimary className="m-t-80 m-b-48" />
