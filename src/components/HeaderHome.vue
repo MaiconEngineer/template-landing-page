@@ -148,7 +148,7 @@ export default defineComponent({
     padding-bottom: 2rem;
 
       .title{
-        font-family: 'Folio Condensed';
+        font-family: 'Folio Condensed' !important;
         // font-size: 36px;
         font-size: 9vw;
         text-transform: uppercase;

@@ -28,10 +28,9 @@
 }
 
 @font-face {
-  font-family: 'Folio Condensed';
-  src: url('./fonts/FolioCondensedBQ-BoldItalic.woff2') format('woff2'),
-       url('./fonts/FolioCondensedBQ-BoldItalic.woff') format('woff'),
-       url('./fonts/FolioCondensedBQ-BoldItalic.ttf') format('truetype');
-  font-weight: bold;
-  font-style: italic;
+  font-family: 'Folio Condensed' !important;
+  src: url('./fonts/FolioCondensedBQ-BoldItalic.woff') format('woff'),
+       url('./fonts/FolioCondensedBQ-BoldItalic.ttf') format('truetype') !important;
+  font-weight: bold !important;
+  font-style: italic !important;
 }
