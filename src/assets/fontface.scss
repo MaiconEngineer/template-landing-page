@@ -29,7 +29,9 @@
 
 @font-face {
   font-family: 'Folio Condensed';
-  src: url('./fonts/FolioCondensedBQ-BoldItalic.ttf') format('opentype');
+  src: url('./fonts/FolioCondensedBQ-BoldItalic.ttf') format('opentype'),
+       url('./fonts/FolioCondensedBQ-BoldItalic.woff') format('woff'),
+       url('./fonts/FolioCondensedBQ-BoldItalic.woff2') format('woff2');
   font-weight: bold;
   font-style: italic;
 }
