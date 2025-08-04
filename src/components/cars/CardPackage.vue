@@ -81,7 +81,6 @@ export default defineComponent({
         <div class="benefits-block">
 
         <ChipCheck label="Acesso total a Musculação" />
-        <ChipCheck label="Acesso a aulas de Muay Thai" />
         <ChipCheck label="Acesso a aulas de Pilares Solo" />
         <ChipCheck label="Acesso ao aulas de Dança" />
         <ChipCheck label="Acesso ao Cardio" />
