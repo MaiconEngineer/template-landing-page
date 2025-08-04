@@ -11,7 +11,7 @@ import CardPackage from './cars/CardPackage.vue'
 import CardSupportContact from './cars/CardSupportContact.vue'
 
 import { gsap } from 'gsap'
-import { useDomRef, useMotionValue, useMotionValueEvent, useScroll, motion, useVelocity, useSpring, useTransform, useAnimationFrame } from 'motion-v'
+import { useSpring, useMotion } from '@vueuse/motion'
 import { NodeFlags } from 'typescript'
 
 import { wrap } from '@motionone/utils'
@@ -43,14 +43,6 @@ const words: Array<{ div: string, text: string, class: string | null }> = [
   { div: 'span', text: 'Impactam', class: null }
 ]
 
-const containerRef = useDomRef()
-const { scrollY } = useScroll({ target: containerRef })
-var valueMotion = useMotionValue<number>(0)
-
-useMotionValueEvent(scrollY, "change", (value: number) => {
-  valueMotion.set(value)
-})
-
 
 export default defineComponent({
   components: {
@@ -58,7 +50,7 @@ export default defineComponent({
     ButtonPrimary,
     CardPackage,
     CardSupportContact,
-    ParallaxComponent
+    ParallaxComponent,
   },
   setup() {
     const count = ref(0)
@@ -71,8 +63,7 @@ export default defineComponent({
       },
       imageSelo: ImageSelo,
       words,
-      scrollY,
-      valueMotion
+      scrollY
     }
   },
   mounted() {
@@ -127,7 +118,7 @@ export default defineComponent({
   <div class="container-home" :style="banner">
 
   </div>
-  <div class="container-content" ref="containerRef">
+  <div class="container-content">
     <h1 class="title f-w-primary" ref="titleRef">
       <template v-for="(word, index) in words">
         <span v-if="word.div == 'span'" v-text='word.text' :class="['char', word.class]"
@@ -136,12 +127,12 @@ export default defineComponent({
         <span>{{ " " }}</span>
       </template>
     </h1>
-    <motion.div initial="offscreen" whileInView="onscreen" :inViewOptions="{ once: true }"
+    <div :inViewOptions="{ once: true }"
       class="subtitle ft-medium f-w-primary">
-      <motion.span> Aqui na Sparta, saúde e bem-estar são prioridade!</motion.span> <br />
+      <span> Aqui na Sparta, saúde e bem-estar são prioridade!</span> <br />
       Valorizamos cada aluno e trabalhamos para elevar <br />
       sua saúde e físico para próximo nível.
-    </motion.div>
+    </div>
     <div class="users">
       <CardAvatar v-for="(item, index) in Array(5).fill(1)" :key="index" :style="{ zIndex: index * -1 }"
         :icon="index === 4 ? undefined : (`avatar${index + 1}` as AvatarKey)" className="custom-card" />
