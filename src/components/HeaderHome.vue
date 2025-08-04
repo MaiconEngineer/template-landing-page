@@ -18,7 +18,7 @@ import { wrap } from '@motionone/utils'
 import ParallaxComponent from './ParallaxComponent.vue'
 
 
-const title = "Construimos fisicos que impactam"
+const title = "Construimos físicos que impactam"
 
 var word1 = document.createElement('span')
 word1.innerHTML = 'Construímos'
