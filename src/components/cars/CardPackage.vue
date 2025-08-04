@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, type PropType } from 'vue';
 import ButtonSecondary from '../buttons/ButtonSecondary.vue';
 import ChipCheck from '../chips/ChipCheck.vue';
 import Dividir from '../Dividir/dividir.vue';
@@ -26,7 +26,7 @@ export default defineComponent({
       type: String
     },
     onPress: {
-      type: Function as () => void,
+      type: Function as PropType<(event:MouseEvent) => void>,
       required: false
     },
     values: Array<String>
@@ -74,7 +74,7 @@ export default defineComponent({
       </li>
     </ul>
 
-    <ButtonSecondary v-on:press="onPress"  />
+    <ButtonSecondary v-on:press="onPress?.($event)"  />
 
     <div class="benefits bg-black-300 ">
 
