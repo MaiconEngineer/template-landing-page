@@ -1,5 +1,5 @@
 <template>
-  <button class="ft-small button-secondary g-tb-red-to-redblack" type="button" @click="onPress?.($event)" ><p>Faça parte da junto com<span class="ft-medium-15">a Sparta</span></p></button>
+  <button class="ft-small button-secondary g-tb-red-to-redblack" type="button" @click="onPress?.($event)" ><p>Faça parte da academia<span class="ft-medium-15">Sparta</span></p></button>
 </template>
 
 <script lang="ts" >
