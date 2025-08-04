@@ -4,6 +4,12 @@ import ButtonTertiary from '../buttons/ButtonTertiary.vue';
 import CardAvatar from '../CardAvatar.vue'
 
 export default {
+  props: {
+    onPressButtonSupport: {
+      required:false,
+      type: Function as () => void
+    }
+  },
   components: {
     CardAvatar,
     ButtonTertiary
@@ -27,7 +33,7 @@ export default {
       </div>
       <h5 class="ft-14 text-lg-lb-red-to-red100 m-b-10">Precisa de ajuda ?</h5>
       <p class="ft-12 text-white-to-white100">Dúvidas sobre os planos, como funciona o nosso treino personalizado ou técnica.</p>
-      <ButtonTertiary />
+      <ButtonTertiary v-on:press="onPressButtonSupport"/>
     </div>
   </div>
 </template>

@@ -7,6 +7,10 @@ export default defineComponent({
     className: {
       type: String,
       default: ''
+    },
+    onPress: {
+      required: false,
+      type: Function as () => void
     }
   },
   components: {
@@ -23,7 +27,7 @@ export default defineComponent({
 <template>
   <div :class="['button-primary',className]" >
      <div class="effect-overlap" ></div>
-     <button type="button" ><span>Quero fazer parte</span><IconArrowTop class="icon"/></button>
+     <button type="button" @click="onPress" ><span>Quero fazer parte</span><IconArrowTop class="icon"/></button>
   </div>
 </template>
 

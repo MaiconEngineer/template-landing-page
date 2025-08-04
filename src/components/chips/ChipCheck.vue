@@ -4,6 +4,12 @@ import { defineComponent } from 'vue';
 import IconCheck from '../icons/IconCheck.vue';
 
 export default defineComponent({
+  props: {
+    label: {
+      type: String,
+      required: false,
+    }
+  },
   components: {
     IconCheck
   },
@@ -23,7 +29,7 @@ export default defineComponent({
     <div class="icon g-lb-green-to-greenblack">
       <IconCheck/>
     </div>
-    <span class="ft-medium">Avaliação física</span>
+    <span class="ft-medium">{{ label }}</span>
   </div>
 </template>
 
@@ -47,6 +53,7 @@ export default defineComponent({
       color: $vt-c-green-500;
       font-weight: 600;
       margin-left: 10px;
+      text-align: left;
     }
   }
 </style>

@@ -1,8 +1,15 @@
 <script lang="ts">
+import { defineComponent } from 'vue';
 import IconPhone from '../icons/IconPhone.vue';
 
 
-export default {
+export default defineComponent({
+  props: {
+    onPress: {
+      required: false,
+      type: Function as () => void
+    }
+  },
   components: {
     IconPhone
   },
@@ -12,11 +19,11 @@ export default {
   mounted(){
 
   }
-}
+})
 </script>
 
 <template>
-  <button class="button-tertiary g-tb-red-to-redblack f-w-primary m-t-34" type="button"><IconPhone/> Falar com Suporte</button>
+  <button class="button-tertiary g-tb-red-to-redblack f-w-primary m-t-34" type="button" @click="onPress" ><IconPhone/> Falar com Suporte</button>
 </template>
 
 <style lang="scss">
