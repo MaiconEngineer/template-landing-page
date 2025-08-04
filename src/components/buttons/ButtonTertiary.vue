@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, type PropType } from 'vue';
 import IconPhone from '../icons/IconPhone.vue';
 
 
@@ -7,7 +7,7 @@ export default defineComponent({
   props: {
     onPress: {
       required: false,
-      type: Function as () => void
+      type: Function as PropType<(event: MouseEvent) => void>
     }
   },
   components: {
@@ -23,7 +23,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <button class="button-tertiary g-tb-red-to-redblack f-w-primary m-t-34" type="button" @click="onPress" ><IconPhone/> Falar com Suporte</button>
+  <button class="button-tertiary g-tb-red-to-redblack f-w-primary m-t-34" type="button" @click="onPress?.($event)" ><IconPhone/> Falar com Suporte</button>
 </template>
 
 <style lang="scss">

@@ -1,5 +1,5 @@
 <script lang="ts" >
-import { defineComponent } from 'vue';
+import { defineComponent, type PropType } from 'vue';
 import IconArrowTop from '../icons/IconArrowTop.vue';
 
 export default defineComponent({
@@ -10,7 +10,7 @@ export default defineComponent({
     },
     onPress: {
       required: false,
-      type: Function as () => void
+      type: Function as PropType<(event: MouseEvent) => void>
     }
   },
   components: {
@@ -27,7 +27,7 @@ export default defineComponent({
 <template>
   <div :class="['button-primary',className]" >
      <div class="effect-overlap" ></div>
-     <button type="button" @click="onPress" ><span>Quero fazer parte</span><IconArrowTop class="icon"/></button>
+     <button type="button" @click="onPress?.($event) " ><span>Quero fazer parte</span><IconArrowTop class="icon"/></button>
   </div>
 </template>
 
