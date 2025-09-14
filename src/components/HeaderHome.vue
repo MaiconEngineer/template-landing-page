@@ -103,7 +103,6 @@ export default defineComponent({
   methods: {
     onClickWantJoin(){
        window.location.href = `https://wa.me/5515991775316?text=Olá! Quero fazer parte dessa academia, como funciona?`
-       fbq('track', 'Lead');
     },
     onClickButtonPackage(typePackage: String){
       window.location.href = `https://wa.me/5515991775316?text=Olá! Tenho interesse em fazer parte da academia." +
