@@ -74,7 +74,7 @@ export default defineComponent({
       </li>
     </ul>
 
-    <ButtonSecondary v-on:press="onPress?.($event)"  />
+    <ButtonSecondary v-on:press="onPress?.($event)" event-pixel-tag  />
 
     <div class="benefits bg-black-300 ">
 
